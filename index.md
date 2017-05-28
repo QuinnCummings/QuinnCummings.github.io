@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <script src="processing-1.3.6.min.js"></script>
 <script type="text/processing" data-processing-target="processing-canvas">
 void setup() {
