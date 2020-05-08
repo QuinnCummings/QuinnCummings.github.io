@@ -10,24 +10,31 @@
 
 nav{
     position:relative;
-    animation-name:"move-in";
-    animation-duration: 1s;
-    margin-left: 5%;
+   
+    margin-left:-8%;
     display:inline-block;
+    
+    animation:move-in 3s forwards 2.5s;
+    
 }
 
 @keyframes move-in{
-    from{margin-left:5%;}
-    to{margin-left:10%;}
+    0%{margin-left:-8%;}
+    100%{margin-left:5%;}
 }
+@keyframes move-in2{
+    0%{margin-left:0%;}
+    100%{margin-left:13%;}
+}
+
 
 
 .button{
     text-align: center;
     margin-top: 100px;
     padding: 10px;
-    border:5px solid #66FCF1;
-    border-radius: 3px;  
+    border:2px solid #66FCF1;
+    border-radius: 10px;  
     transition:all 0.3s ease;
 }
 
@@ -38,13 +45,32 @@ nav{
 
 
 header{
-
     text-align: center;
     position:absolute;
-    top:200px;
-    left:38%;
-    margin-top: 50px;
+    top:300px;
+    left:20%;
+    opacity:0;
+    animation: bounceIn 1s  forwards 1s,
+                move-in2 3s forwards 2.5s;
+    
+
+    
 }
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity:1;
+    }
+  }
 
 h1 {
     font-size: 70px;
@@ -55,6 +81,7 @@ h1 {
     display: block; 
     text-align: center;
     position:static;
+    margin-top:200px;
     margin-bottom: 700px;
 }
 
@@ -65,7 +92,7 @@ h1 {
     bottom: 20px; /* Place the button at the bottom of the page */
     right: 30px; /* Place the button 30px from the right */
     z-index: 99; /* Make sure it does not overlap */
-    border: solid #66FCF1; /* Remove borders */
+    border: 2px solid #66FCF1; /* Remove borders */
     outline: none; /* Remove outline */
     cursor: pointer; /* Add a mouse pointer on hover */
     padding: 15px; /* Some padding */
@@ -77,3 +104,19 @@ h1 {
   #top_button:hover {
     background-color:  #233852; /* Add a dark-grey background on hover */
   }
+
+
+
+#post_name{
+    opacity: 0;
+    animation: 3s fadeIn forwards 7s;
+}
+
+@keyframes fadeIn {
+    0% /* (from) */ {
+      opacity: 0;
+    }
+    100% /* (to) */ {
+      opacity: 1;
+    }
+}
